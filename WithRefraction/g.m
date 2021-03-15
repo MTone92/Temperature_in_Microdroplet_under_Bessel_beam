@@ -21,7 +21,7 @@ for i = 1:1:I
     end
 end
 
-    f = sin(theta1)./(r.*sin(theta)).*c.*(1-Ref).*exp(-gamma.*r_0.*r1).*besselj(0,kr.*r_0.*sin(theta1)).^2;
+    f = sin(theta1).^2./(r.*sin(theta)).^2.*c.*(1-Ref).*exp(-gamma.*r_0.*r1).*besselj(0,kr.*r_0.*sin(theta1)).^2;
     Ind = find(sin(theta)<10^(-10));
     f(Ind) = c.*(1-Ref).*exp(-gamma.*r_0.*r1(Ind)).*besselj(0,kr.*r_0.*sin(theta1(Ind))).^2;
 end
